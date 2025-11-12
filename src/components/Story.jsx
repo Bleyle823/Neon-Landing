@@ -49,7 +49,7 @@ const Story = () => {
         </p>
         <div className="relative size-full">
           <AnimatedTitle
-            title="Trade by c<b>o</b>nversation"
+            title="Trade by conversation"
             sectionId="#story"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />

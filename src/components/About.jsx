@@ -30,7 +30,7 @@ const About = () => {
           Polymarket 101
         </h2>
         <AnimatedTitle
-          title=" Trade on real‑world events with <b>USDC</b>"
+          title=" Trade on real world events with USDC"
           containerClass="mt-5 !text-black text-center"
         />
         <div className="about-subtext">

@@ -98,7 +98,7 @@ const Features = () => {
             overlayClassName="bg-black/50"
             title={
               <>
-                C<b>o</b>re Tr<b>a</b>des
+                Core Trades
               </>
             }
             description="Place buy/sell orders, close positions, and redeem winnings. Approve USDC once, then trade freely."
@@ -113,7 +113,7 @@ const Features = () => {
               overlayClassName="bg-black/50"
               title={
                 <>
-                  Market Disc<b>o</b>very
+                  Market Discovery
                 </>
               }
               description="Search topics, explain markets, see trending markets, and get quick price checks."
@@ -127,7 +127,7 @@ const Features = () => {
               overlayClassName="bg-black/50"
               title={
                 <>
-                  P<b>o</b>rtfolio
+                  Portfolio
                 </>
               }
               description="View positions, P&L, balances, and get nudges like risk checks and price alerts."
@@ -139,7 +139,7 @@ const Features = () => {
               src="img/price.jpg"
               title={
                 <>
-                  Data & Analyt<b>i</b>cs
+                  Data & Analytics
                 </>
               }
               description="Order book snapshots, price history, and market sync to keep your view current."
@@ -149,7 +149,7 @@ const Features = () => {
           <BentoTilt className="bento-tilt_2  ">
             <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
               <h1 className="bento-title special-font max-w-64">
-                M<b>-</b>Pesa, Tw<b>i</b>tter, WhatsA<b>p</b>p
+                MPesa, Twitter, WhatsApp
               </h1>
               <TiLocationArrow className="m-5 scale-[5] self-end" />
             </div>

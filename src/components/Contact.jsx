@@ -34,7 +34,7 @@ const Contact = () => {
         <div className="flex flex-col items-center text-center">
           <p className="font-general text-[10px] uppercase">Community & Support</p>
           <p className="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem] z-10">
-            Let’s b<b>u</b>ild the <br /> future of <br /> c<b>o</b>nversational trading
+            Let’s build the <br /> future of <br /> conversational trading
           </p>
           <Button title="join us" containerClass="mt-10 cursor-pointer" />
         </div>

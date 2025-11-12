@@ -32,12 +32,11 @@ const Contact = () => {
           />
         </div>
         <div className="flex flex-col items-center text-center">
-          <p className="font-general text-[10px] uppercase">Join Zentry</p>
+          <p className="font-general text-[10px] uppercase">Community & Support</p>
           <p className="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem] z-10">
-            Let's b<b>u</b>ild the <br /> new era of <br /> g<b>a</b>ming t
-            <b>o</b>gether
+            Let’s b<b>u</b>ild the <br /> future of <br /> c<b>o</b>nversational trading
           </p>
-          <Button title="contact us" containerClass="mt-10 cursor-pointer" />
+          <Button title="join us" containerClass="mt-10 cursor-pointer" />
         </div>
       </div>
     </div>

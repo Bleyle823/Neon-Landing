@@ -4,7 +4,12 @@ import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItems = [
+  { label: "Features", href: "#features" },
+  { label: "About", href: "#about" },
+  { label: "How It Works", href: "#story" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -74,7 +79,7 @@ const Navbar = () => {
             />
             <Button
               id="product-button"
-              title="Products"
+              title="Start Chatting"
               rightIcon={<TiLocationArrow />}
               containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
             />
@@ -83,11 +88,11 @@ const Navbar = () => {
             <div className="hidden md:block">
               {navItems.map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.href}
+                  href={item.href}
                   className="nav-hover-btn"
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
             </div>

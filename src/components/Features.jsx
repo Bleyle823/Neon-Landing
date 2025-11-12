@@ -64,16 +64,15 @@ const BentoCard = ({ src, title, description }) => {
 
 const Features = () => {
   return (
-    <section className="bg-black pb-52">
+    <section id="features" className="bg-black pb-52">
       <div className="container mx-auto px-3 md:px-10">
         <div className="px-5 py-32">
           <p className="font-circular-web text-lg text-blue-50">
-            Into the Metagame Layer
+            Neon Capabilities
           </p>
           <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-            Inmerse yourself in a rich and ever-expanding universe where a
-            vibrant array of products converge into an interconnected overlay
-            experience that transforms the way you interact on your world.
+            Trade by chatting. Neon handles order placement, market discovery,
+            portfolio insights, and live data—so you can act fast with clarity.
           </p>
         </div>
         <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
@@ -81,10 +80,10 @@ const Features = () => {
             src="videos/feature-1.mp4"
             title={
               <>
-                radi<b>n</b>t
+                C<b>o</b>re Tr<b>a</b>des
               </>
             }
-            description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
+            description="Place buy/sell orders, close positions, and redeem winnings. Approve USDC once, then trade freely."
           />
         </BentoTilt>
 
@@ -94,10 +93,10 @@ const Features = () => {
               src="videos/feature-2.mp4"
               title={
                 <>
-                  zig<b>m</b>a
+                  Market Disc<b>o</b>very
                 </>
               }
-              description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+              description="Search topics, explain markets, see trending markets, and get quick price checks."
             />
           </BentoTilt>
 
@@ -106,10 +105,10 @@ const Features = () => {
               src="videos/feature-3.mp4"
               title={
                 <>
-                  n<b>e</b>xus
+                  P<b>o</b>rtfolio
                 </>
               }
-              description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+              description="View positions, P&L, balances, and get nudges like risk checks and price alerts."
             />
           </BentoTilt>
 
@@ -118,17 +117,17 @@ const Features = () => {
               src="videos/feature-4.mp4"
               title={
                 <>
-                  az<b>u</b>l
+                  Data & Analyt<b>i</b>cs
                 </>
               }
-              description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+              description="Order book snapshots, price history, and market sync to keep your view current."
             />
           </BentoTilt>
 
           <BentoTilt className="bento-tilt_2  ">
             <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
               <h1 className="bento-title special-font max-w-64">
-                M<b>o</b>re co<b>m</b>ing s<b>o</b>on!
+                M<b>-</b>Pesa, Tw<b>i</b>tter, WhatsA<b>p</b>p
               </h1>
               <TiLocationArrow className="m-5 scale-[5] self-end" />
             </div>

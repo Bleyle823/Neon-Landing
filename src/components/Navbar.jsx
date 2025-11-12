@@ -81,7 +81,19 @@ const Navbar = () => {
               id="product-button"
               title="Start Chatting"
               rightIcon={<TiLocationArrow />}
+              href="https://unsinged-perkily-willena.ngrok-free.dev"
+              target="_blank"
+              rel="noopener noreferrer"
               containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
+            />
+            <Button
+              id="docs-button"
+              title="Docs"
+              rightIcon={<TiLocationArrow />}
+              href="https://www.notion.so/NEON-2a9e6f3c06678023bb23f3d271566567"
+              target="_blank"
+              rel="noopener noreferrer"
+              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1 ml-2"
             />
           </div>
           <div className="flex h-full items-center">

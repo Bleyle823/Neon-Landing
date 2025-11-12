@@ -168,8 +168,22 @@ const Hero = () => {
               id="watch-trailer"
               title="Start Chatting"
               leftIcon={<TiLocationArrow />}
+              href="https://unsinged-perkily-willena.ngrok-free.dev"
+              target="_blank"
+              rel="noopener noreferrer"
               containerClass="!bg-yellow-300 flex-center gap-1"
             />
+            <div className="mt-3">
+              <Button
+                id="docs-hero"
+                title="Docs"
+                leftIcon={<TiLocationArrow />}
+                href="https://www.notion.so/NEON-2a9e6f3c06678023bb23f3d271566567"
+                target="_blank"
+                rel="noopener noreferrer"
+                containerClass="bg-blue-50 flex-center gap-1"
+              />
+            </div>
           </div>
         </div>
       </div>

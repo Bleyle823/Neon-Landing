@@ -40,17 +40,33 @@ const BentoTilt = ({ children, className = "" }) => {
 };
 
 //componente
-const BentoCard = ({ src, title, description }) => {
+const BentoCard = ({
+  src,
+  title,
+  description,
+  textClassName = "text-blue-50",
+  overlayClassName = "",
+}) => {
   return (
     <div className="relative size-full">
-      <video
-        src={src}
-        loop
-        muted
-        autoPlay
-        className="absolute left-0 top-0 size-full object-cover object-center"
-      />
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
+      {src.endsWith(".mp4") ? (
+        <video
+          src={src}
+          loop
+          muted
+          autoPlay
+          className="absolute left-0 top-0 size-full object-cover object-center"
+        />
+      ) : (
+        <img
+          src={src}
+          className="absolute left-0 top-0 size-full object-cover object-center"
+        />
+      )}
+      {overlayClassName && (
+        <div className={`absolute left-0 top-0 size-full z-10 ${overlayClassName}`} />
+      )}
+      <div className={`relative z-20 flex size-full flex-col justify-between p-5 ${textClassName}`}>
         <div>
           <h1 className="bento-title special-font">{title}</h1>
           {description && (
@@ -77,7 +93,9 @@ const Features = () => {
         </div>
         <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
           <BentoCard
-            src="videos/feature-1.mp4"
+            src="img/polymarkets.png"
+            textClassName="text-white"
+            overlayClassName="bg-black/50"
             title={
               <>
                 C<b>o</b>re Tr<b>a</b>des
@@ -90,7 +108,9 @@ const Features = () => {
         <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
           <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
             <BentoCard
-              src="videos/feature-2.mp4"
+              src="img/market.jpg"
+              textClassName="text-white"
+              overlayClassName="bg-black/50"
               title={
                 <>
                   Market Disc<b>o</b>very
@@ -102,7 +122,9 @@ const Features = () => {
 
           <BentoTilt className="bento-tilt_1 row-spam-1 ms-32 md:col-span-1 md:ms-0">
             <BentoCard
-              src="videos/feature-3.mp4"
+              src="img/portfolio.jpg"
+              textClassName="text-white"
+              overlayClassName="bg-black/50"
               title={
                 <>
                   P<b>o</b>rtfolio
@@ -114,7 +136,7 @@ const Features = () => {
 
           <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
             <BentoCard
-              src="videos/feature-4.mp4"
+              src="img/price.jpg"
               title={
                 <>
                   Data & Analyt<b>i</b>cs

@@ -3,6 +3,7 @@ import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
+import ConnectWallet from "./ConnectWallet";
 
 const navItems = [
   { label: "Features", href: "#features" },
@@ -129,6 +130,9 @@ const Navbar = () => {
                 ></div>
               ))}
             </button>
+            <div className="hidden md:block ml-4">
+              <ConnectWallet />
+            </div>
           </div>
         </nav>
       </header>

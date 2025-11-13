@@ -4,6 +4,7 @@ import { TiLocation, TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import ConnectWallet from "./ConnectWallet";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
@@ -183,6 +184,9 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 containerClass="bg-blue-50 flex-center gap-1"
               />
+            </div>
+            <div className="mt-3">
+              <ConnectWallet />
             </div>
           </div>
         </div>

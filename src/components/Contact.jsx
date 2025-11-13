@@ -36,7 +36,13 @@ const Contact = () => {
           <p className="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem] z-10">
             Let’s build the <br /> future of <br /> conversational trading
           </p>
-          <Button title="join us" containerClass="mt-10 cursor-pointer" />
+          <Button
+            title="join us"
+            //href="https://www.notion.so/Neon-Fundraiser-2aae6f3c066780d2a7e2f7432759eed8?source=copy_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            containerClass="mt-10 cursor-pointer"
+          />
         </div>
       </div>
     </div>

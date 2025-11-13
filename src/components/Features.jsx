@@ -137,6 +137,8 @@ const Features = () => {
           <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
             <BentoCard
               src="img/price.jpg"
+              textClassName="text-white"
+              overlayClassName="bg-black/50"
               title={
                 <>
                   Data & Analytics

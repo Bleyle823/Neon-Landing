@@ -6,11 +6,29 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
+// Mobile detection hook
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  return isMobile;
+};
+
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
+  const isMobile = useIsMobile();
 
   const totalVideos = 4;
   const nextVideodRef = useRef(null);
@@ -46,10 +64,13 @@ const Hero = () => {
 
   //
   useEffect(() => {
-    if (loadedVideos === totalVideos - 1) {
+    if (isMobile) {
+      // On mobile, skip video loading and show content immediately
+      setIsLoading(false);
+    } else if (loadedVideos === totalVideos - 1) {
       setIsLoading(false);
     }
-  }, [loadedVideos]);
+  }, [loadedVideos, isMobile]);
 
   //animacion principal, del centro al fondo
   useGSAP(
@@ -115,49 +136,61 @@ const Hero = () => {
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
-        <div>
-          <div className="mask-clip-path absolute-center absolute z-50 size-52 cursor-pointer overflow-hidden rounded-lg">
-            <div
-              onClick={handleMiniVdClick}
-              className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
-            >
-              {/**video centro */}
-              <video
-                ref={nextVideodRef}
-                src={getVideoSrc(upcomingVideoIndex)}
-                loop
-                muted
-                playsInline
-                preload="auto"
-                id="current-video"
-                className="size-64 origin-center scale-150 object-cover object-center"
-                onLoadedData={handleVideoLoad}
-              />
-            </div>
+        {isMobile ? (
+          // Mobile fallback with hero image and tint
+          <div className="absolute left-0 top-0 size-full">
+            <img
+              src="img/hero-mobile.png"
+              alt="Neon Hero"
+              className="absolute left-0 top-0 size-full object-cover object-center"
+            />
+            <div className="absolute left-0 top-0 size-full bg-black/40" />
           </div>
-          {/**background video */}
-          <video
-            ref={nextVideodRef}
-            src={getVideoSrc(currentIndex)}
-            loop
-            muted
-            playsInline
-            preload="auto"
-            id="next-video"
-            className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onLoadedData={handleVideoLoad}
-          />
-          <video
-            src={getVideoSrc(previousVideoIndex)}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute left-0 top-0 size-full object-cover object-center"
-            onLoadedData={handleVideoLoad}
-          />
-        </div>
+        ) : (
+          <div>
+            <div className="mask-clip-path absolute-center absolute z-50 size-52 cursor-pointer overflow-hidden rounded-lg">
+              <div
+                onClick={handleMiniVdClick}
+                className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+              >
+                {/**video centro */}
+                <video
+                  ref={nextVideodRef}
+                  src={getVideoSrc(upcomingVideoIndex)}
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  id="current-video"
+                  className="size-64 origin-center scale-150 object-cover object-center"
+                  onLoadedData={handleVideoLoad}
+                />
+              </div>
+            </div>
+            {/**background video */}
+            <video
+              ref={nextVideodRef}
+              src={getVideoSrc(currentIndex)}
+              loop
+              muted
+              playsInline
+              preload="auto"
+              id="next-video"
+              className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+              onLoadedData={handleVideoLoad}
+            />
+            <video
+              src={getVideoSrc(previousVideoIndex)}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="absolute left-0 top-0 size-full object-cover object-center"
+              onLoadedData={handleVideoLoad}
+            />
+          </div>
+        )}
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
           AI
         </h1>

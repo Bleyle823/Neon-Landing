@@ -36,8 +36,8 @@ const About = () => {
         <div className="about-subtext">
           <p>Buy and sell YES/NO shares—prices reflect crowd probabilities.</p>
           <p>
-            Kenyan analogy: buy a 65 bob "Yes" ticket today, sell anytime to
-            lock profits or cut losses. Settlement is automatic on Polygon.
+            Example: buy a $0.65 "Yes" ticket today; you can sell anytime to
+            lock profits or cut losses. Settlement is automatic on-chain.
           </p>
         </div>
       </div>
